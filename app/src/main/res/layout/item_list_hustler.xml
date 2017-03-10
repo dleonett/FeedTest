@@ -1,39 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:orientation="vertical"
     tools:ignore="MissingPrefix">
 
     <FrameLayout
         android:id="@+id/content"
-        android:background="@color/gray_400"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/height_item_hustler">
+        android:layout_height="@dimen/height_item_hustler"
+        android:background="@color/gray_400">
 
         <ImageView
             android:id="@+id/img_banner"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="centerCrop"/>
+            android:scaleType="centerCrop" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/explore_item_shadow_layer"/>
+            android:background="@drawable/explore_item_shadow_layer" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="14dp"
-            android:layout_gravity="bottom">
+            android:layout_gravity="bottom"
+            android:gravity="bottom"
+            android:padding="14dp">
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_gravity="start|bottom"
+                android:layout_weight="1"
                 android:gravity="start"
                 android:orientation="vertical">
 
@@ -41,19 +43,66 @@
                     android:id="@+id/name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:singleLine="true"
-                    android:textSize="16sp"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    tools:text="Mariangela Salcedo"/>
-
-                <TextView
-                    android:id="@+id/profession"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text.default"
-                    tools:text="Desarrollador de aplicaciones"/>
+                    tools:text="Mariangela Salcedo" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/profession"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:singleLine="true"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        tools:text="Desarrollador Android" />
+
+                    <TextView
+                        style="@style/HustlerSkillChip"
+                        android:layout_marginLeft="6dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4 more" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/HustlerSkillChip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Developer" />
+
+                    <TextView
+                        style="@style/HustlerSkillChip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Driver" />
+
+                    <TextView
+                        style="@style/HustlerSkillChip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Singer" />
+
+                    <TextView
+                        style="@style/HustlerSkillChip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="•••" />
+
+                </LinearLayout>
 
             </LinearLayout>
 
@@ -72,19 +121,19 @@
                         android:id="@+id/price"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:textSize="22dp"
                         android:textColor="@android:color/white"
-                        tools:text="$ 55"/>
+                        android:textSize="22dp"
+                        android:textStyle="bold"
+                        tools:text="$ 55" />
 
                     <TextView
                         android:id="@+id/skill_type_price"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="right"
-                        android:textSize="@dimen/text.xs"
                         android:textColor="@color/white"
-                        tools:text="Per hour"/>
+                        android:textSize="@dimen/text.xs"
+                        tools:text="Per hour" />
 
                 </LinearLayout>
 
