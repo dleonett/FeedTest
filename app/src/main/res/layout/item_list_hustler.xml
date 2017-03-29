@@ -40,7 +40,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/name"
+                    android:id="@+id/tvName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
@@ -52,33 +52,32 @@
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:id="@+id/profession"
+                        android:id="@+id/tvFavoriteSkill"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
+                        android:ellipsize="end"
                         android:singleLine="true"
                         android:textColor="@color/white"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         android:textStyle="bold"
                         tools:text="Desarrollador Android" />
 
-                    <TextView
+                    <!--<TextView
                         style="@style/HustlerSkillChip"
                         android:layout_marginLeft="6dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="4 more" />
+                        android:text="+ 4 more" />-->
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
                     android:orientation="horizontal"
-                    android:visibility="gone">
+                    android:visibility="visible">
 
-                    <TextView
+                    <!--<TextView
                         style="@style/HustlerSkillChip"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -94,13 +93,15 @@
                         style="@style/HustlerSkillChip"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Singer" />
+                        android:text="Singer" />-->
 
                     <TextView
+                        android:id="@+id/tvMoreSkills"
                         style="@style/HustlerSkillChip"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="•••" />
+                        android:layout_marginTop="4dp"
+                        android:text="+ 4 more" />
 
                 </LinearLayout>
 
@@ -112,7 +113,7 @@
                 android:orientation="vertical">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:gravity="right"
                     android:orientation="vertical">
@@ -125,15 +126,6 @@
                         android:textSize="22dp"
                         android:textStyle="bold"
                         tools:text="$ 55" />
-
-                    <TextView
-                        android:id="@+id/skill_type_price"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="right"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/text.xs"
-                        tools:text="Per hour" />
 
                 </LinearLayout>
 

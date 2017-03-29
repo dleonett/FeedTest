@@ -1,7 +1,6 @@
 package com.example.daniel.feedtest;
 
 
-import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +9,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -20,15 +22,23 @@ import butterknife.ButterKnife;
 public class HustlerListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private static final String TAG = HustlerListAdapter.class.getSimpleName();
+    private static final int TYPE_ITEM = 1;
+    private static final int TYPE_FOOTER = 2;
 
-    private Context mContext;
+    private List<Hustler> items;
 
     public class ViewHolderItem extends RecyclerView.ViewHolder {
-        @Bind(R.id.img_banner) public ImageView imgBanner;
-        @Bind(R.id.name) public TextView tvName;
-        @Bind(R.id.profession) public TextView tvProfession;
-        @Bind(R.id.price) public TextView tvPrice;
-        @Bind(R.id.skill_type_price) public TextView tvTypePrice;
+
+        @Bind(R.id.img_banner)
+        ImageView imgBanner;
+        @Bind(R.id.tvName)
+        TextView tvName;
+        @Bind(R.id.tvFavoriteSkill)
+        TextView tvProfession;
+        @Bind(R.id.price)
+        TextView tvPrice;
+        @Bind(R.id.tvMoreSkills)
+        TextView tvMoreSkills;
 
         public ViewHolderItem(View v) {
             super(v);
@@ -36,34 +46,75 @@ public class HustlerListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         }
     }
 
-    public HustlerListAdapter(Context context) {
-        mContext = context;
+    public class ViewHolderFooter extends RecyclerView.ViewHolder {
+
+        public ViewHolderFooter(View v) {
+            super(v);
+            ButterKnife.bind(this, v);
+        }
+    }
+
+    public HustlerListAdapter() {
+        items = new ArrayList<>();
+
+        items.add(new Hustler("http://i.imgur.com/OHTOsEM.jpg", "Daniel Leonett", "Driver with super cars and crazy people", "$80", 4));
+        items.add(new Hustler("http://i.imgur.com/OHTOsEM.jpg", "Danimir Bermudez", "Developer", "$60", 1));
+        items.add(new Hustler("http://i.imgur.com/OHTOsEM.jpg", "Mariangela Salcedo", "Veterinarian", "$100", 1));
+        items.add(new Hustler("http://i.imgur.com/OHTOsEM.jpg", "Rafael Villanueva", "Designer", "$75", 2));
+        items.add(new Hustler("http://i.imgur.com/OHTOsEM.jpg", "Jose Saad", "Protester", "$90", 7));
+        items.add(new Hustler("http://i.imgur.com/OHTOsEM.jpg", "Luis Hernandez", "CTO", "$95", 1));
+        items.add(new Hustler("http://i.imgur.com/OHTOsEM.jpg", "Alexander Fermin", "Chef", "$50", 3));
     }
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater vi = LayoutInflater.from(parent.getContext());
-        View v = vi.inflate(R.layout.item_list_hustler, parent, false);
-        return new ViewHolderItem(v);
+        View v;
+        if (viewType == TYPE_ITEM) {
+            v = vi.inflate(R.layout.item_list_hustler_small, parent, false);
+            return new ViewHolderItem(v);
+        } else {
+            v = vi.inflate(R.layout.item_list_hustler_small_more, parent, false);
+            return new ViewHolderFooter(v);
+        }
     }
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
-        final ViewHolderItem viewHolderItem = (ViewHolderItem) holder;
+        if (getItemViewType(position) == TYPE_ITEM) {
+            final Hustler hustler = items.get(position);
 
-        viewHolderItem.tvName.setText("Lorem Ipsum");
-        viewHolderItem.tvPrice.setText("$100");
-        viewHolderItem.tvTypePrice.setText("Per hour");
-        viewHolderItem.tvProfession.setText("Carpenter");
-        Glide.with(mContext)
-                .load("http://i.imgur.com/OHTOsEM.jpg")
-                .error(android.R.drawable.ic_delete)
-                .into(viewHolderItem.imgBanner);
+            final ViewHolderItem viewHolderItem = (ViewHolderItem) holder;
+
+            viewHolderItem.tvName.setText(hustler.getName());
+            viewHolderItem.tvPrice.setText(hustler.getPrice());
+            viewHolderItem.tvProfession.setText(hustler.getFavoriteSkill());
+            if (hustler.getSkillsCount() > 1) {
+                viewHolderItem.tvMoreSkills.setVisibility(View.GONE);
+                viewHolderItem.tvMoreSkills.setText((hustler.getSkillsCount() - 1) + " more skills");
+            } else {
+                viewHolderItem.tvMoreSkills.setVisibility(View.GONE);
+            }
+            Glide.with(viewHolderItem.itemView.getContext())
+                    .load(hustler.getBanner())
+                    .error(android.R.drawable.ic_delete)
+                    .into(viewHolderItem.imgBanner);
+        } else {
+            // ...
+        }
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        if (position < items.size()) {
+            return TYPE_ITEM;
+        }
+        return TYPE_FOOTER;
     }
 
     @Override
     public int getItemCount() {
-        return 10;
+        return items.size() + 1;
     }
 
 }

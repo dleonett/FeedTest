@@ -19,10 +19,14 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
-    @Bind(R.id.recycler_view)
-    RecyclerView recyclerView;
     @Bind(R.id.toolbar)
     Toolbar toolbar;
+    @Bind(R.id.rvPopular)
+    RecyclerView rvPopular;
+    @Bind(R.id.rvRecommended)
+    RecyclerView rvRecommended;
+    @Bind(R.id.rvNearby)
+    RecyclerView rvNearby;
 
     private HustlerListAdapter mAdapter;
 
@@ -35,10 +39,25 @@ public class MainActivity extends AppCompatActivity {
 
         setSupportActionBar(toolbar);
 
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mAdapter = new HustlerListAdapter(this);
-        recyclerView.setAdapter(mAdapter);
+        mAdapter = new HustlerListAdapter();
+
+        rvPopular.setHasFixedSize(true);
+        LinearLayoutManager layoutManager1 = new LinearLayoutManager(this);
+        layoutManager1.setOrientation(LinearLayoutManager.HORIZONTAL);
+        rvPopular.setLayoutManager(layoutManager1);
+        rvPopular.setAdapter(mAdapter);
+
+        rvRecommended.setHasFixedSize(true);
+        LinearLayoutManager layoutManager2 = new LinearLayoutManager(this);
+        layoutManager2.setOrientation(LinearLayoutManager.HORIZONTAL);
+        rvRecommended.setLayoutManager(layoutManager2);
+        rvRecommended.setAdapter(mAdapter);
+
+        rvNearby.setHasFixedSize(true);
+        LinearLayoutManager layoutManager3 = new LinearLayoutManager(this);
+        layoutManager3.setOrientation(LinearLayoutManager.HORIZONTAL);
+        rvNearby.setLayoutManager(layoutManager3);
+        rvNearby.setAdapter(mAdapter);
     }
 
     @SuppressLint("NewApi")
