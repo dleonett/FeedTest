@@ -41,22 +41,27 @@ public class MainActivity extends AppCompatActivity {
 
         mAdapter = new HustlerListAdapter();
 
+        SpaceItemDecoration dividerItemDecoration = new SpaceItemDecoration(this, R.dimen.horizontal_list_spacing);
+
         rvPopular.setHasFixedSize(true);
         LinearLayoutManager layoutManager1 = new LinearLayoutManager(this);
         layoutManager1.setOrientation(LinearLayoutManager.HORIZONTAL);
         rvPopular.setLayoutManager(layoutManager1);
+        rvPopular.addItemDecoration(dividerItemDecoration);
         rvPopular.setAdapter(mAdapter);
 
         rvRecommended.setHasFixedSize(true);
         LinearLayoutManager layoutManager2 = new LinearLayoutManager(this);
         layoutManager2.setOrientation(LinearLayoutManager.HORIZONTAL);
         rvRecommended.setLayoutManager(layoutManager2);
+        rvRecommended.addItemDecoration(dividerItemDecoration);
         rvRecommended.setAdapter(mAdapter);
 
         rvNearby.setHasFixedSize(true);
         LinearLayoutManager layoutManager3 = new LinearLayoutManager(this);
         layoutManager3.setOrientation(LinearLayoutManager.HORIZONTAL);
         rvNearby.setLayoutManager(layoutManager3);
+        rvNearby.addItemDecoration(dividerItemDecoration);
         rvNearby.setAdapter(mAdapter);
     }
 

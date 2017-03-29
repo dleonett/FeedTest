@@ -2,11 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="@dimen/width_item_hustler"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:paddingLeft="8dp"
-    android:paddingRight="8dp"
     tools:ignore="MissingPrefix">
 
     <FrameLayout
@@ -20,6 +18,41 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:gravity="end"
+            android:orientation="horizontal"
+            android:padding="6dp">
+
+            <!--<TextView
+                style="@style/HustlerSkillChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Developer" />
+
+            <TextView
+                style="@style/HustlerSkillChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Driver" />
+
+            <TextView
+                style="@style/HustlerSkillChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Singer" />-->
+
+            <TextView
+                android:id="@+id/tvMoreSkills"
+                style="@style/HustlerSkillChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="More skills" />
+
+        </LinearLayout>
 
     </FrameLayout>
 
@@ -70,40 +103,6 @@
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 tools:text="Mariangela Salcedo" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:visibility="gone">
-
-                <!--<TextView
-                    style="@style/HustlerSkillChip"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Developer" />
-
-                <TextView
-                    style="@style/HustlerSkillChip"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Driver" />
-
-                <TextView
-                    style="@style/HustlerSkillChip"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Singer" />-->
-
-                <TextView
-                    android:id="@+id/tvMoreSkills"
-                    style="@style/HustlerSkillChip"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:text="+ 4 more" />
-
-            </LinearLayout>
 
         </LinearLayout>
 

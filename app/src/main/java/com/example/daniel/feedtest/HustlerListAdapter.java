@@ -90,8 +90,9 @@ public class HustlerListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
             viewHolderItem.tvPrice.setText(hustler.getPrice());
             viewHolderItem.tvProfession.setText(hustler.getFavoriteSkill());
             if (hustler.getSkillsCount() > 1) {
-                viewHolderItem.tvMoreSkills.setVisibility(View.GONE);
-                viewHolderItem.tvMoreSkills.setText((hustler.getSkillsCount() - 1) + " more skills");
+                viewHolderItem.tvMoreSkills.setVisibility(View.VISIBLE);
+                //viewHolderItem.tvMoreSkills.setText((hustler.getSkillsCount() - 1) + " more skills");
+                viewHolderItem.tvMoreSkills.setText("More skills");
             } else {
                 viewHolderItem.tvMoreSkills.setVisibility(View.GONE);
             }
