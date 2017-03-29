@@ -2,12 +2,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/action_hustlers"
-        android:enabled="true"
-        android:icon="@drawable/ic_supervisor_account_black_24dp"
-        android:title="Hustlers"
-        app:showAsAction="ifRoom" />
-    <item
         android:id="@+id/action_inbox"
         android:enabled="true"
         android:icon="@drawable/ic_inbox_black_24dp"
@@ -18,6 +12,12 @@
         android:enabled="true"
         android:icon="@drawable/ic_work_black_24dp"
         android:title="Hires"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_hustlers"
+        android:enabled="true"
+        android:icon="@drawable/ic_supervisor_account_black_24dp"
+        android:title="Hustlers"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_wallet"
