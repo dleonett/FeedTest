@@ -57,13 +57,13 @@ public class HustlerListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     public HustlerListAdapter() {
         items = new ArrayList<>();
 
-        items.add(new Hustler("http://i.imgur.com/OHTOsEM.jpg", "Daniel Leonett", "Driver with super cars and crazy people", "$80", 4));
+        items.add(new Hustler("http://cdn.thesimpledollar.com/wp-content/uploads/2014/11/uber-driver-600x400.jpg", "Daniel Leonett", "Driver with super cars and crazy people", "$80", 4));
         items.add(new Hustler("http://i.imgur.com/OHTOsEM.jpg", "Danimir Bermudez", "Developer", "$60", 1));
-        items.add(new Hustler("http://i.imgur.com/OHTOsEM.jpg", "Mariangela Salcedo", "Veterinarian", "$100", 1));
-        items.add(new Hustler("http://i.imgur.com/OHTOsEM.jpg", "Rafael Villanueva", "Designer", "$75", 2));
-        items.add(new Hustler("http://i.imgur.com/OHTOsEM.jpg", "Jose Saad", "Protester", "$90", 7));
-        items.add(new Hustler("http://i.imgur.com/OHTOsEM.jpg", "Luis Hernandez", "CTO", "$95", 1));
-        items.add(new Hustler("http://i.imgur.com/OHTOsEM.jpg", "Alexander Fermin", "Chef", "$50", 3));
+        items.add(new Hustler("http://www.imchef.org/wp-content/uploads/2013/04/chef-exigente-pasion-imchef.jpg", "Daniela Perez", "Chef", "$100", 1));
+        items.add(new Hustler("http://www.defsa.org.za/sites/default/files/field/image/pro-designers6.jpg", "Rafael Villanueva", "Designer", "$75", 2));
+        items.add(new Hustler("http://www.conpats.com/wp-content/uploads/2016/07/protestor.jpg", "Jose Saad", "Protester", "$90", 7));
+        items.add(new Hustler("https://cdn.techinasia.com/wp-content/uploads/2016/03/THUAN-750x422.jpg", "Luis Hernandez", "CTO", "$95", 1));
+        items.add(new Hustler("https://image.freepik.com/free-photo/doctor-with-co-workers-analyzing-an-x-ray_1098-581.jpg", "Alexander Fermin", "Doctor", "$50", 3));
     }
 
     @Override
