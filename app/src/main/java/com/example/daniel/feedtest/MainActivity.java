@@ -2,6 +2,7 @@ package com.example.daniel.feedtest;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
 import android.view.ViewConfiguration;
@@ -17,7 +19,9 @@ import android.view.ViewConfiguration;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements HustlerListAdapter.OnItemClickListener {
+
+    private static final String TAG = MainActivity.class.getSimpleName();
 
     @Bind(R.id.toolbar)
     Toolbar toolbar;
@@ -39,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
         setSupportActionBar(toolbar);
 
-        mAdapter = new HustlerListAdapter();
+        mAdapter = new HustlerListAdapter(HustlerListAdapter.ORIENTATION_HORIZONTAL, this);
 
         SpaceItemDecoration dividerItemDecoration = new SpaceItemDecoration(this, R.dimen.horizontal_list_spacing);
 
@@ -101,5 +105,23 @@ public class MainActivity extends AppCompatActivity {
             height = getResources().getDimensionPixelSize(resourceId);
         }
         return height;
+    }
+
+    @Override
+    public void onHustlerClick(Hustler hustler) {
+        Log.d(TAG, "onHustlerClick()");
+    }
+
+    @Override
+    public void onSeeMoreClick() {
+        Intent intent = new Intent(this, MainListActivity.class);
+
+        Bundle bundle = new Bundle();
+        // TODO: 30/3/2017 - Send section title
+        bundle.putString("extra_section_title", "");
+
+        intent.putExtras(bundle);
+
+        startActivity(intent);
     }
 }
