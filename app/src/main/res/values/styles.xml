@@ -5,6 +5,7 @@
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="HustlerSkillChip">
+        <item name="fontPath">@string/font_semi_bold</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:paddingBottom">2dp</item>
         <item name="android:paddingLeft">6dp</item>
@@ -16,8 +17,26 @@
     </style>
 
     <style name="FeedSectionTitle">
+        <item name="fontPath">@string/font_bold</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="HustlerItemName">
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textColor">@color/gray_500</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="HustlerItemSkill">
+        <item name="fontPath">@string/font_bold</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAllCaps">true</item>
         <item name="android:textStyle">bold</item>
     </style>
 

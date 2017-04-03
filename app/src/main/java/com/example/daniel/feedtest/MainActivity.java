@@ -18,6 +18,7 @@ import android.view.ViewConfiguration;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class MainActivity extends AppCompatActivity implements HustlerListAdapter.OnItemClickListener {
 
@@ -67,6 +68,16 @@ public class MainActivity extends AppCompatActivity implements HustlerListAdapte
         rvNearby.setLayoutManager(layoutManager3);
         rvNearby.addItemDecoration(dividerItemDecoration);
         rvNearby.setAdapter(mAdapter);
+
+        if (toolbar != null) {
+            setSupportActionBar(toolbar);
+            toolbar.setTitle("");
+        }
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
 
     @SuppressLint("NewApi")

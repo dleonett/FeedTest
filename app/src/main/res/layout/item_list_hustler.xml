@@ -78,14 +78,9 @@
 
                 <TextView
                     android:id="@+id/tvFavoriteSkill"
+                    style="@style/HustlerItemSkill"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:maxLines="1"
-                    android:textAllCaps="true"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
                     tools:text="Desarrollador Android" />
 
                 <!--<TextView
@@ -99,12 +94,10 @@
 
             <TextView
                 android:id="@+id/tvName"
+                style="@style/HustlerItemName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:textColor="@color/gray_500"
-                android:textSize="14sp"
+                android:layout_marginTop="-8sp"
                 tools:text="Mariangela Salcedo" />
 
         </LinearLayout>
@@ -112,7 +105,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="2dp"
+            android:layout_marginBottom="4dp"
             android:gravity="right"
             android:orientation="vertical">
 
@@ -128,6 +121,7 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="-4sp"
                 android:orientation="horizontal">
 
                 <ImageView

@@ -1,5 +1,6 @@
 package com.example.daniel.feedtest;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,6 +11,7 @@ import android.view.View;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class MainListActivity extends AppCompatActivity implements HustlerListAdapter.OnItemClickListener {
 
@@ -45,6 +47,7 @@ public class MainListActivity extends AppCompatActivity implements HustlerListAd
         if (toolbar != null) {
             setSupportActionBar(toolbar);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            toolbar.setTitle("");
             toolbar.setNavigationOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -52,6 +55,11 @@ public class MainListActivity extends AppCompatActivity implements HustlerListAd
                 }
             });
         }
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
 
     @Override
