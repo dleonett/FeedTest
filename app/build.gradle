@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion '25.0.0'
+    buildToolsVersion '25.0.3'
 
     defaultConfig {
         applicationId "com.example.daniel.feedtest"
@@ -20,10 +20,10 @@ android {
 }
 
 ext {
-    supportVersion = '25.2.0'
+    supportVersion = '25.3.1'
     butterknifeVersion = '7.0.1'
     glideVersion = '3.7.0'
-    calligraphyVersion = '2.2.0'
+    calligraphyVersion = '2.3.0'
 }
 
 dependencies {
